@@ -1,0 +1,55 @@
+.zuowei{
+    position: absolute;
+    right: 46px;
+    width: 75px;
+    top: 14px
+}
+.day div p{
+	width: 100%;
+}
+.day{
+	background: #F6F6F6;
+	box-shadow: 3px 7px 9px #E1E1E1;
+	border-radius: 8px;
+}
+.day p,h2{
+	text-align: center;
+}
+.day div{
+	float: left;
+	box-sizing: border-box;
+	box-shadow: 0px -3px 4px #E1E1E1;
+	width: calc(33.33333333333333333%);
+}
+.day div+div{
+	border-left: 1px solid #ccc;
+}
+.suggest{
+	box-shadow: 3px 4px 4px #E1E1E1;
+	margin-top: 8px;
+	
+}
+
+.clear-fix:after{
+	content: ".";
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	
+}
+.clear-fix{
+	zoom: 1;
+}
+
+#kuaidimain{
+	background:#F3F3F3 ;
+}
+#kuaidimain li{
+    list-style: none;
+  font-weight: bold;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: '微软雅黑';
+    box-shadow: 1px -4px 7px #ccc;
+}

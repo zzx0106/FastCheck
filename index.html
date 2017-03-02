@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"/>
+    <link rel="stylesheet" type="text/css" href="css/train.css"/>
+    <script type="text/javascript">
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   		});
+    </script>
+</head>
+<body>
+<div data-role="page" id="index1">
+	<div data-role="header" data-position="fixed">
+		<h1>火车查询</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<form action="">
+			<div id="myDiv"></div>
+			<div class="ui-field-contain">
+				<label for="">发车站：</label>
+				<input type="text" name="" id="search-begin" value="" placeholder="例：北京南站 就填 北京南" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="">终点站：</label>
+				<input type="text" name="" id="search-end" value="" value="" placeholder="同上" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="date">日期：</label>
+				<input type="date" name="date" id="search-date" />
+			</div>
+			<input type="button" id="search-submit" value="搜索" />
+			<ul data-role="listview" data-inset="true" id="list">
+
+			</ul>
+		</form>
+
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#index1" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-home">火车票查询</a>
+				</li>
+				<li>
+					<a href="#planepage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-cloud">飞机票查询</a>
+				</li>
+				<li>
+					<a href="#weatherpage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-grid">天气查询</a>
+				</li>
+				<li>
+					<a href="#kuaidipage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-comment">快递查询</a>
+				</li>
+				<li>
+					<a href="#translatepage" data-transition="flow"  class="ui-btn ui-btn-icon-top ui-icon-bullets">在线翻译</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="detail">
+	<div data-role="header" data-position="fixed">
+		<h1>列车时刻表查询</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<h2>G1</h2>
+		<table data-role="table" data-mode="reflow" class="ui-responsive table-stroke" id="result-table">
+			<thead>
+				<tr>
+					<td>站序</td>
+					<td>站名</td>
+					<td>到站时间</td>
+					<td>出发时间</td>
+					<td>停留时间</td>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+		<a href="#" class="ui-btn ui-btn-corner-all" data-rel="back">返回</a>
+	</div>
+</div>
+
+<div data-role="page" id="planepage">
+	<div data-role="header" data-position="fixed">
+		<h1>飞机票查询</h1>
+	</div>
+	<div role="main" class="ui-content">
+			<div id="myDiv"></div>
+			<div class="ui-field-contain">
+				<label for="">起点：</label>
+				<input type="text" name="" id="plane-begin" value="" placeholder="输入起点城市" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="">终点：</label>
+				<input type="text" name="" id="plane-end" value="" value="" placeholder="输入终点城市" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="date">航班日期：</label>
+				<input type="date" name="date" id="plane-date" placeholder="不输入默认为当天"/>
+			</div>
+			<input type="button" id="plane-submit" value="搜索" />
+			<ul data-role="listview" data-inset="true" id="planelist">
+
+			</ul>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#index1" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-home">火车票查询</a>
+				</li>
+				<li>
+					<a href="#planepage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-cloud">飞机票查询</a>
+				</li>
+				<li>
+					<a href="#weatherpage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-grid">天气查询</a>
+				</li>
+				<li>
+					<a href="#kuaidipage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-comment">快递查询</a>
+				</li>
+				<li>
+					<a href="#translatepage" data-transition="flow"  class="ui-btn ui-btn-icon-top ui-icon-bullets">在线翻译</a>
+				</li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="weatherpage">
+	<div data-role="header" data-position="fixed">
+		<h1>天气查询</h1>
+	</div>
+	<div role="main" class="ui-content weathermain">
+	<form action="">
+		<div class="ui-field-contain">
+			<label for="">请输入：</label>
+			<input type="text" name="" id="weather-into" value="" placeholder="输入城市名查询天气" />
+		</div>
+		<input type="button" id="weatherStar" value="确认" />
+	</form>
+	
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#index1" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-home">火车票查询</a>
+				</li>
+				<li>
+					<a href="#planepage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-cloud">飞机票查询</a>
+				</li>
+				<li>
+					<a href="#weatherpage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-grid">天气查询</a>
+				</li>
+				<li>
+					<a href="#kuaidipage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-comment">快递查询</a>
+				</li>
+				<li>
+					<a href="#translatepage" data-transition="flow"  class="ui-btn ui-btn-icon-top ui-icon-bullets">在线翻译</a>
+				</li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="kuaidipage">
+	<div data-role="header" data-position="fixed">
+		<h1>快递单号查询</h1>
+	</div>
+	<div role="main" class="ui-content" id="kuaidimain">
+		<div class="ui-field-contain">
+			<label for="">快递公司：</label>
+			<input type="text" name="" id="kuaidi-type" value="" placeholder="输入拼音如顺丰，则输入shunfeng" />
+		</div>
+		<div class="ui-field-contain">
+			<label for="">快递单号：</label>
+			<input type="text" name="" id="kuaidi-postid" value="" placeholder="快递单号" />
+		</div>
+		<input type="button" id="kuaidiSearch" value="确认" />
+		
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#index1" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-home">火车票查询</a>
+				</li>
+				<li>
+					<a href="#planepage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-cloud">飞机票查询</a>
+				</li>
+				<li>
+					<a href="#weatherpage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-grid">天气查询</a>
+				</li>
+				<li>
+					<a href="#kuaidipage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-comment">快递查询</a>
+				</li>
+				<li>
+					<a href="#translatepage" data-transition="flow"  class="ui-btn ui-btn-icon-top ui-icon-bullets">在线翻译</a>
+				</li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="translatepage">
+	<div data-role="header" data-position="fixed">
+		<h1>在线翻译</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<form action="">
+			<div class="ui-field-contain">
+				<label for="">请输入：</label>
+				<input type="text" name="" id="translate-into" value="" placeholder="可以是中文或者英文" />
+			</div>
+			<input type="button" id="translateStar" value="确认" />
+			<ul data-role="listview" data-inset="true" id="translatelist">
+
+			</ul>
+		</form>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#index1" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-home">火车票查询</a>
+				</li>
+				<li>
+					<a href="#planepage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-cloud">飞机票查询</a>
+				</li>
+				<li>
+					<a href="#weatherpage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-grid">天气查询</a>
+				</li>
+				<li>
+					<a href="#kuaidipage" data-transition="flow" class="ui-btn ui-btn-icon-top ui-icon-comment">快递查询</a>
+				</li>
+				<li>
+					<a href="#translatepage" data-transition="flow"  class="ui-btn ui-btn-icon-top ui-icon-bullets">在线翻译</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	
+	
+	<script src="js/jquery-1.8.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/train.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/translate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/weather.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plane.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/kuaidi.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

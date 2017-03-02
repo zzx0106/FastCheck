@@ -1,0 +1,21 @@
+{
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/jquery.mobile-1.4.5.css",
+      "css/train.css",
+      "js/jquery-1.8.0.min.js",
+      "js/jquery.mobile-1.4.5.js",
+      "js/train.js",
+      "server/trainchildpage.php",
+      "server/trainhomepage.php",
+      "data/traindata.json",
+      "js/translate.js",
+      "server/translatehomepage.php",
+      "js/weather.js",
+      "server/weatherpage.php"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}
